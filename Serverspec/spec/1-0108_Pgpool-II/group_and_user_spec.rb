@@ -84,8 +84,7 @@ describe ("1-0108_Pgpool-II(group and user)") do
         end
       end
 
-#      describe file("/etc/init.d/pgpool") do
-      describe file("/etc/init.d/pgpool-II-94-34") do
+      describe file("/etc/init.d/pgpool") do
         describe ("pgpoolの実行ユーザが#{ name }であること") do
           its(:content) { should match /^PGPOOLUSER=#{ name }$/ }
         end

@@ -1,9 +1,0 @@
-connection_hostname: '192.168.151.22'
-remote_tmp_dir: 'C:\.shift'
-BASE: 
-ADVANCED: 
-  service: 
-    - name: 'Appinfo'
-      state: True
-      start_mode: 'Auto'
-

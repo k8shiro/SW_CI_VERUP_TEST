@@ -1,14 +1,12 @@
 describe ("1-0108_Pgpool-II(conf)") do
-#  describe file("/etc/pgpool-II/pgpool.conf") do
-  describe file("/etc/pgpool-II-94-34/pgpool.conf") do
+  describe file("/etc/pgpool-II/pgpool.conf") do
     md5sum = property[:Pgpool][:config][:md5sum] rescue nil
     describe ("のMD5値が#{ md5sum }であること"), :if => md5sum != nil do
       its(:md5sum) { should eq md5sum }
     end
   end
 
-#  describe file("/etc/pgpool-II/pcp.conf") do
-  describe file("/etc/pgpool-II-94-34/pcp.conf") do
+  describe file("/etc/pgpool-II/pcp.conf") do
     pcp_users = Array(property[:Pgpool][:pcp_users]) rescue []
     pcp_users.each do |pcp_user|
       pcp_name = pcp_user[:name] rescue nil
@@ -22,8 +20,7 @@ describe ("1-0108_Pgpool-II(conf)") do
     end
   end
 
-#  describe file("/etc/pgpool-II/pool_passwd") do
-  describe file("/etc/pgpool-II-94-34/pool_passwd") do
+  describe file("/etc/pgpool-II/pool_passwd") do
     pool_passwds = Array(property[:Pgpool][:pool_passwd]) rescue []
     pool_passwds.each do |pool_passwd|
       pool_name = pool_passwd[:name] rescue nil
@@ -37,8 +34,7 @@ describe ("1-0108_Pgpool-II(conf)") do
     end
   end
 
-#  describe file("/etc/pgpool-II/pool_hba.conf") do
-  describe file("/etc/pgpool-II-94-34/pool_hba.conf") do
+  describe file("/etc/pgpool-II/pool_hba.conf") do
     pool_hbas = Array(property[:Pgpool][:pool_hba]) rescue []
     pool_hbas.each do |pool_hba|
       type = pool_hba[:type] rescue nil

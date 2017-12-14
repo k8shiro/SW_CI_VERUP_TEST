@@ -5,8 +5,7 @@ describe ("1-0108_Pgpool-II(package and service)") do
         its(:stdout) { should match /^pgpool-II.*/ }
       end
     end
-#    describe service("pgpool") do
-    describe service("pgpool-II-94-34") do
+    describe service("pgpool") do
       state = property[:Pgpool][:state] rescue nil
       describe ("のサービスが#{ state }であること") do
         case state
