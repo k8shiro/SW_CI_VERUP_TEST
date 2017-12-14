@@ -1,0 +1,16 @@
+- meta: flush_handlers
+
+- name: 1-0108-04_post_tasks - change pgpool service state
+  service:
+#    name: pgpool
+    name: pgpool-II-94-34
+    state: "{{ pgpool_state }}"
+  when: pgpool_state is defined
+
+- name: 1-0108-04_post_tasks - change auto_starting setting of pgpool service
+  service:
+#    name: pgpool
+    name: pgpool-II-94-34
+    enabled: "{{ pgpool_enabled }}"
+  when: pgpool_enabled is defined
+

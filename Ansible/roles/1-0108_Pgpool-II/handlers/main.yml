@@ -1,0 +1,7 @@
+---
+- name: pgpool_service_restart
+  service:
+#    name: pgpool
+    name: pgpool-II-94-34
+    state: restarted
+
