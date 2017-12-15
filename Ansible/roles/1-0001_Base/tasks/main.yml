@@ -30,7 +30,7 @@
   when: base_network.hostname is defined
 
 #- include: ./Network/1-0001-03_Network.yml
-- include_tasks: ./Network/1-0001-03_Network.yml
+- include_tasks: ./Network/1-0001-22_Route.yml
   when:
     - base_network.static_routing is defined or
       base_network.default_gw is defined
